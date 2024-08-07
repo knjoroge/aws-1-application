@@ -19,6 +19,6 @@ resource "aws_instance" "app" {
 }
 
 output "subnet_id" {
-  value = aws_subnet.main.id
+  value       = data.terraform_remote_state.network.outputs.subnet_id
   description = "The ID of the subnet used by the application."
 }
