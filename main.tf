@@ -17,3 +17,8 @@ resource "aws_instance" "app" {
   instance_type = "t2.micro"
   subnet_id     = data.terraform_remote_state.network.outputs.subnet_id
 }
+
+output "subnet_id" {
+  value = aws_subnet.main.id
+  description = "The ID of the subnet used by the application."
+}
