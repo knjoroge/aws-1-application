@@ -21,3 +21,7 @@ resource "aws_instance" "app" {
 output "app_instance_id" {
   value = aws_instance.app.id
 }
+
+output "subnet_id" {
+  value = data.terraform_remote_state.network.outputs.subnet_id
+}
